@@ -8,22 +8,22 @@
       if(href.match(/vision=super/)) {
         document.cookie = "vision=super";
       };
-      var faye_root = 'http://supervision.pbskids.org:9100';
-      if(href.match(/super-vision-dev\.pbskids\.org/)) {
-        faye_root = 'http://super-vision-dev.pbskids.org:9000';
-      } else if(href.match(/chip\.pbskids\.org/)) {
-        faye_root = 'http://chip.pbskids.org:8080';
-      } else if(href.match(/cosimo\.pbskids\.org/)) {
-        faye_root = 'http://super-vision-dev.pbskids.org:9000';
-      } else if(document.cookie.match(/vision=super/)) {
-	faye_root = 'https://supervision.pbskids.org:9300';
-      } else if(href.match(/waldorf\.pbskids\.org/)) {
-        faye_root = 'https://supervision.pbskids.org:9300';
-      } else if(href.match(/vision=super/)) {
-        faye_root = 'https://supervision.pbskids.org:9300';
-      } else if(href.match(/[a-z]+\.pbskids\.org/i)) {
-        faye_root = 'http://sv-broker-stg.pbskids.org:9100';
-      }
+      var faye_root = '';
+     // if(href.match(/super-vision-dev\.pbskids\.org/)) {
+     //   faye_root = 'http://super-vision-dev.pbskids.org:9000';
+     // } else if(href.match(/chip\.pbskids\.org/)) {
+     //   faye_root = 'http://chip.pbskids.org:8080';
+     // } else if(href.match(/cosimo\.pbskids\.org/)) {
+     //   faye_root = 'http://super-vision-dev.pbskids.org:9000';
+     // } else if(document.cookie.match(/vision=super/)) {
+	//faye_root = 'https://supervision.pbskids.org:9300';
+     // } else if(href.match(/waldorf\.pbskids\.org/)) {
+     //   faye_root = 'https://supervision.pbskids.org:9300';
+     // } else if(href.match(/vision=super/)) {
+     //   faye_root = 'https://supervision.pbskids.org:9300';
+     // } else if(href.match(/[a-z]+\.pbskids\.org/i)) {
+     //   faye_root = 'http://sv-broker-stg.pbskids.org:9100';
+     // }
 	
       var client = new Faye.Client(faye_root + '/faye');
 

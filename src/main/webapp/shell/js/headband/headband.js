@@ -104,24 +104,24 @@
     if( _site_message )  onMessagesUpdate( "pbskids.messages.site" , _site_message );
     if( _video_message ) onMessagesUpdate( "pbskids.messages.video", _video_message );
     
-    if ( window.Modernizr != undefined ) {
-      if ( Modernizr.webaudioapi ) {
-        if( Modernizr.issilky ) GA_obj.trackEvent('Web Auido API - Sniffer', 'Amazon Silk', 'true');
-        if( Modernizr.isandroid) GA_obj.trackEvent('Web Auido API - Sniffer', 'Android Browser or Chrome', 'true');
-        
-        if ( !Modernizr.issilky && !Modernizr.isandroid ) {
-          GA_obj.trackEvent('Web Auido API - Sniffer', 'Modern Browser', 'true');
-        }
-      }
-      else {
-        if( Modernizr.issilky ) GA_obj.trackEvent('Web Auido API - Sniffer', 'Amazon Silk', 'false');
-        if( Modernizr.isandroid) GA_obj.trackEvent('Web Auido API - Sniffer', 'Android Browser', 'false');
-        
-        if ( !Modernizr.issilky && !Modernizr.isandroid ) {
-            GA_obj.trackEvent('Web Auido API - Sniffer', 'Any Browser', 'false');
-        }
-      }
-    }
+    //if ( window.Modernizr != undefined ) {
+    //  if ( Modernizr.webaudioapi ) {
+    //    if( Modernizr.issilky ) GA_obj.trackEvent('Web Auido API - Sniffer', 'Amazon Silk', 'true');
+    //    if( Modernizr.isandroid) GA_obj.trackEvent('Web Auido API - Sniffer', 'Android Browser or Chrome', 'true');
+    //
+    //    if ( !Modernizr.issilky && !Modernizr.isandroid ) {
+    //      GA_obj.trackEvent('Web Auido API - Sniffer', 'Modern Browser', 'true');
+    //    }
+    //  }
+    //  else {
+    //    if( Modernizr.issilky ) GA_obj.trackEvent('Web Auido API - Sniffer', 'Amazon Silk', 'false');
+    //    if( Modernizr.isandroid) GA_obj.trackEvent('Web Auido API - Sniffer', 'Android Browser', 'false');
+    //
+    //    if ( !Modernizr.issilky && !Modernizr.isandroid ) {
+    //        GA_obj.trackEvent('Web Auido API - Sniffer', 'Any Browser', 'false');
+    //    }
+    //  }
+    //}
       
   }//init()
 
@@ -306,7 +306,7 @@
   function trackHeadbandEvent(action, label, value){
     var category = "Parents Bar";
     //if(console && console.log) console.log( "trackHeadbandEvent: "   + category + " : " + action + " : " + label + " : " + value );
-    if( window.GA_obj && window.GA_obj.trackEvent ) window.GA_obj.trackEvent( category, action, label, value );
+    //if( window.GA_obj && window.GA_obj.trackEvent ) window.GA_obj.trackEvent( category, action, label, value );
   }//trackHeadbandEvent()
 
 
@@ -570,7 +570,8 @@
       if( _hideExternalLinks ) return;
       
       var __href        = ( window.top != window ) ? document.referrer : window.location.href ;
-      var __CDN         = __href.match(/soup\.pbskids\.org/) ? "http://soup-tc.pbskids.org" : __href.match(/ernie\.pbskids\.org\//) ? "http://ernie-tc.pbskids.org" : __href.match(/^http:\/\/((?!www(\-tc)?\.).+)pbskids\.org/) ? "" : "http://www-tc.pbskids.org";
+      //var __CDN         = __href.match(/soup\.pbskids\.org/) ? "http://soup-tc.pbskids.org" : __href.match(/ernie\.pbskids\.org\//) ? "http://ernie-tc.pbskids.org" : __href.match(/^http:\/\/((?!www(\-tc)?\.).+)pbskids\.org/) ? "" : "http://www-tc.pbskids.org";
+      var __CDN = "";
       var __SITE_ROOT   = ( __href.match(/\/~/) ? __href.substring(0,__href.indexOf("site") + 4 ) + "/" : "/shell/" );
 
       var _tooltipID    = "for-parents-tooltip";
@@ -1253,7 +1254,8 @@
         
         var __enabled     = true;
         var __href        = ( window.top != window ) ? document.referrer : window.location.href ;
-        var __CDN         = __href.match(/soup\.pbskids\.org/) ? "http://soup-tc.pbskids.org" : __href.match(/ernie\.pbskids\.org\//) ? "http://ernie-tc.pbskids.org" : __href.match(/^http:\/\/((?!www(\-tc)?\.).+)pbskids\.org/) ? "" : "http://www-tc.pbskids.org";
+        //var __CDN         = __href.match(/soup\.pbskids\.org/) ? "http://soup-tc.pbskids.org" : __href.match(/ernie\.pbskids\.org\//) ? "http://ernie-tc.pbskids.org" : __href.match(/^http:\/\/((?!www(\-tc)?\.).+)pbskids\.org/) ? "" : "http://www-tc.pbskids.org";
+        var __CDN = ""
         var __SITE_ROOT   = ( __href.match(/\/~/) ? __href.substring(0,__href.indexOf("site") + 4) + "/" : "/shell/" );
 
         var __graphic     = __CDN + __SITE_ROOT + "images/present/supervision/logo_supervision" + ( typeof Modernizr !== "undefined" && Modernizr.svg ? ".svg" : ".png" );
@@ -1701,7 +1703,7 @@
           sponsor_link.on('click', function(e) {
               e.preventDefault();
               bridge(sponsor.url, sponsor_data.name, 'sponsor-link');
-              GA_obj.trackEvent('website sponsorship', 'display unit click', sponsor_data.name);
+              //GA_obj.trackEvent('website sponsorship', 'display unit click', sponsor_data.name);
               
           });
           
@@ -1721,7 +1723,7 @@
           $('#shell-sponsorship-footer').find('.sponsor-link').on('click', function(e) {
               e.preventDefault();
               bridge(sponsor.url, sponsor_data.name, 'sponsor-link');
-              GA_obj.trackEvent('website sponsorship', 'display unit click (from footer)', sponsor_data.name);
+              //GA_obj.trackEvent('website sponsorship', 'display unit click (from footer)', sponsor_data.name);
           });
           
           sponsoship_container.fadeIn();

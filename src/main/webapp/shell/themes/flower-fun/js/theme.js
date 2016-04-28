@@ -3,7 +3,8 @@ var SUB_LEFT = 0;
 
 var host = window.location.href.split('/')[2];
 
-if (host.match(/pbskids\.org$/)) 
+//if (host.match(/pbskids\.org$/))
+if (true)
 {              
     (function( factory )
     {

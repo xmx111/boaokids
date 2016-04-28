@@ -362,11 +362,11 @@
 	    }
 	    
 	    var href = ( window.top != window ) ? document.referrer : window.location.href ;
-	    if (!href.match(/(dev)\.pbskids\.org\//)) {
-	        if (!$('body').hasClass('os-video-theme')) {
-	            init_video_teaser();
-	        }
-	    }
+	    //if (!href.match(/(dev)\.pbskids\.org\//)) {
+	    //    if (!$('body').hasClass('os-video-theme')) {
+	    //        init_video_teaser();
+	    //    }
+	    //}
 	    
 	    /* UI Audio
 	    var soundJSON = $.getJSON( _SITE_ROOT + 'audio/views/home/audiosprite.json', function() { })

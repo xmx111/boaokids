@@ -115,6 +115,7 @@
     } 
   );
   require( ["the-wheel"] );
+  require( ["jquery"] );
   require( ["theme"] );
   require( ["megapromo"] );
   require( ["messages", "headband"] );//require headband AFTER supervision
